@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS 활용하기</title>
+  <style>
+    .menubar {
+      background-color: cornflowerblue;
+      height: 44px;
+      line-height: 44px;
+      border-radius: 8px;
+    }
+    .menubar ul {
+      padding-left: 0;
+    }
+    .menubar .menu > li {
+      position: relative;
+      display: inline-block;
+      margin-left: 24px;
+      color: white;
+      cursor: pointer;
+    }
+    .menubar .menu > li .submenu {
+      position: absolute;
+      top: 44px;
+      left: 0;
+      display: none;
+    }
+    .menubar .menu > li:hover { 
+      color: yellow
+    }
+    .menubar .menu > li:hover .submenu { 
+      display: block; 
+    }
+    .menubar .menu > li:hover .submenu > li { 
+      display: block;
+      color: white;
+      width: 80px;
+      padding-left: 12px;
+      background-color: royalblue;
+    }
+    .menubar .menu > li:hover .submenu > li:hover { 
+      background-color: darkblue;
+    }
+    .content {
+      padding: 12px;
+    }
+    .utils {
+      width: 100%;
+      border: 1px solid #ddd;
+      background-color: #eee;
+      border-radius: 4px;
+    }
+    .utils td {
+      padding: 8px 16px;
+      cursor: pointer;
+      text-align: center;
+      border-right: 1px solid #ddd;
+    }
+    .utils td:last-child {
+      border-right: 0;
+    }
+    .utils td:hover {
+      color: blue;
+    }
+    .textinput {
+      margin-top: 24px;
+      width: calc(100% - 48px);
+      height: 480px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 24px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="menubar">
+    <ul class="menu">
+      <li>
+        파일
+        <ul class="submenu">
+          <li>열기</li>
+          <li>저장</li>
+          <li>닫기</li>
+        </ul>
+      </li>
+      <li>
+        실행
+        <ul class="submenu">
+          <li>앞으로</li>
+          <li>뒤로</li>
+        </ul>
+      </li>
+      <li>
+        도움말
+        <ul class="submenu">
+          <li>단축키</li>
+          <li>정보</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <table class="utils">
+      <tr>
+        <td>글꼴</td>
+        <td>글자 크기</td>
+        <td>글자색</td>
+        <td>글자꾸밈</td>
+        <td>정렬</td>
+        <td>표</td>
+        <td>도형</td>
+        <td>그림</td>
+        <td>찾기</td>
+      </tr>
+    </table>
+    <textarea class="textinput" placeholder="문서 내용을 입력하세요."></textarea>
+  </div>
+</body>
+</html>
